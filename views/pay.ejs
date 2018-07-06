@@ -1,0 +1,13 @@
+<form action='/payment/charge?amount=<%=amount%>&vendors=["<%=queryParameters%>"]' method="POST">
+    <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="pk_test_IiqCCIWisrJr9mPeOSPjVNaz"
+      data-amount='<%=amount%>'
+      data-name="NiftyHub Payment"
+      data-description="Order charges from niftyhub."
+      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+      data-locale="auto">
+    </script>
+  </form>
+
+  

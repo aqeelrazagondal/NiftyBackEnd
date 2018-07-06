@@ -1,0 +1,11 @@
+SELECT * FROM( SELECT *,(((acos(sin((@latitude*pi()/180)) * sin((lattitude*pi()/180))+cos((@latitude*pi()/180)) * cos((lattitude*pi()/180)) * cos(((@longitude - longitude)*pi()/180))))*180/pi())*60*1.1515*1.609344) as distance FROM tbl_reseller_shop) temp WHERE distance <= 12
+
+
+------------Original--------------
+
+SELECT * FROM(
+    SELECT *,(((acos(sin((@latitude*pi()/180)) * sin((Latitude*pi()/180))+cos((@latitude*pi()/180)) * cos((Latitude*pi()/180)) * cos(((@longitude - Longitude)*pi()/180))))*180/pi())*60*1.1515*1.609344) as distance FROM Distances) t
+WHERE distance <= @distance
+
+--------Example------------
+SELECT * FROM( SELECT *,(((acos(sin((33.6961*pi()/180)) * sin((lattitude*pi()/180))+cos((33.6961*pi()/180)) * cos((lattitude*pi()/180)) * cos(((73.0491  - longitude)*pi()/180))))*180/pi())*60*1.1515*1.609344) as distance FROM tbl_reseller_shop) t WHERE distance > -1
